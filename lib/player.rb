@@ -30,10 +30,8 @@ class Player
 		puts "#{@name} attacks #{opponent.name}"
 		dmg_caused = compute_damage
 		puts "BIM!! #{dmg_caused} points dans sa bouche"
-		opponent.gets_damage(dmg_caused)
+		opponent.gets_damage(dmg_caused) #important le opponent sinon le mec s'inglige lui-même des dommages lol
 	end
-
-	
 
 	def compute_damage
 		return rand(1..6)
@@ -41,6 +39,7 @@ class Player
 
 end
 
+#Hop là nouvelle classe
 
 
 class HumanPlayer < Player 
@@ -78,7 +77,7 @@ def search_health_pack
 	value = rand(1..6)
 		case value
 		when 1
-			puts "aussi vide que ta vie sociale en ce moment"
+			puts "Aussi vide que ta vie sociale en ce moment"
 		when 2..5
 			if @life_points + 50 <100
 				@life_points = @life_points + 50
@@ -96,8 +95,6 @@ def search_health_pack
 		end
 
 end
-
-
 
 end
 
